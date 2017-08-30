@@ -16,7 +16,7 @@ public class ClientServiceImpl implements ClientService {
 
     @Override
     public Client addClient(Client client) {
-        Client savedClient = clientRepository.saveAndFlush(client);
+        Client savedClient = clientRepository.save(client);
         return savedClient;
     }
 
@@ -32,11 +32,11 @@ public class ClientServiceImpl implements ClientService {
 
     @Override
     public Client editClient(Client client) {
-        return clientRepository.saveAndFlush(client);
+        return clientRepository.save(client);
     }
 
     @Override
     public List<Client> getAllClients() {
-        return clientRepository.findAll();
+        return /*clientRepository.findAll()*/ null;
     }
 }

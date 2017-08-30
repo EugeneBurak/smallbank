@@ -16,7 +16,7 @@ public class BankAccountServiceImpl implements BankAccountService{
 
     @Override
     public BankAccount addBankAccount(BankAccount bankAccount) {
-        BankAccount savedBankAccount = bankAccountRepository.saveAndFlush(bankAccount);
+        BankAccount savedBankAccount = bankAccountRepository.save(bankAccount);
         return savedBankAccount;
     }
 
@@ -32,11 +32,11 @@ public class BankAccountServiceImpl implements BankAccountService{
 
     @Override
     public BankAccount editBankAccount(BankAccount bankAccount) {
-        return bankAccountRepository.saveAndFlush(bankAccount);
+        return bankAccountRepository.save(bankAccount);
     }
 
     @Override
     public List<BankAccount> getAllBankAccounts() {
-        return bankAccountRepository.findAll();
+        return /*bankAccountRepository.findAll()*/ null;
     }
 }
