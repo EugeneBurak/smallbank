@@ -16,32 +16,6 @@ public class ClientServiceImpl implements ClientService {
 
     @Override
     public Client addClient(Client client) {
-        return null;
-    }
-
-    @Override
-    public void deleteClient(int id) {
-
-    }
-
-    @Override
-    public Client getClientById(int id) {
-        return null;
-    }
-
-    @Override
-    public Client editClient(Client client) {
-        return null;
-    }
-
-    @Override
-    public List<Client> getAllClients() {
-        return null;
-    }
-}
-/*
-    @Override
-    public Client addClient(Client client) {
         Client savedClient = clientRepository.saveAndFlush(client);
         return savedClient;
     }
@@ -53,7 +27,7 @@ public class ClientServiceImpl implements ClientService {
 
     @Override
     public Client getClientById(int id) {
-        return clientRepository.findById(id);
+        return /*clientRepository.findById(id)*/ null;
     }
 
     @Override
@@ -65,4 +39,4 @@ public class ClientServiceImpl implements ClientService {
     public List<Client> getAllClients() {
         return clientRepository.findAll();
     }
- */
+}

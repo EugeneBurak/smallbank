@@ -16,32 +16,6 @@ public class BankAccountServiceImpl implements BankAccountService{
 
     @Override
     public BankAccount addBankAccount(BankAccount bankAccount) {
-        return null;
-    }
-
-    @Override
-    public void deleteBankAccount(int id) {
-
-    }
-
-    @Override
-    public BankAccount getBankAccountById(int id) {
-        return null;
-    }
-
-    @Override
-    public BankAccount editBankAccount(BankAccount bankAccount) {
-        return null;
-    }
-
-    @Override
-    public List<BankAccount> getAllBankAccounts() {
-        return null;
-    }
-}
-/*
-    @Override
-    public BankAccount addBankAccount(BankAccount bankAccount) {
         BankAccount savedBankAccount = bankAccountRepository.saveAndFlush(bankAccount);
         return savedBankAccount;
     }
@@ -53,7 +27,7 @@ public class BankAccountServiceImpl implements BankAccountService{
 
     @Override
     public BankAccount getBankAccountById(int id) {
-        return bankAccountRepository.findById(id);
+        return /*bankAccountRepository.findById(id)*/ null;
     }
 
     @Override
@@ -65,4 +39,4 @@ public class BankAccountServiceImpl implements BankAccountService{
     public List<BankAccount> getAllBankAccounts() {
         return bankAccountRepository.findAll();
     }
- */
+}

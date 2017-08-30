@@ -17,37 +17,6 @@ public class TransactionServiceImpl implements TransactionService {
 
     @Override
     public Transaction addTransaction(Transaction transaction) {
-        return null;
-    }
-
-    @Override
-    public void deleteTransaction(int id) {
-
-    }
-
-    @Override
-    public Transaction getTransactionById(int id) {
-        return null;
-    }
-
-    @Override
-    public Transaction getTransactionByTime(Date time) {
-        return null;
-    }
-
-    @Override
-    public Transaction editTransaction(Transaction transaction) {
-        return null;
-    }
-
-    @Override
-    public List<Transaction> getAllTransactions() {
-        return null;
-    }
-}
-/*
- @Override
-    public Transaction addTransaction(Transaction transaction) {
         Transaction savedTransaction = transactionRepository.saveAndFlush(transaction);
         return savedTransaction;
     }
@@ -59,12 +28,12 @@ public class TransactionServiceImpl implements TransactionService {
 
     @Override
     public Transaction getTransactionById(int id) {
-        return transactionRepository.findById(id);
+        return /*transactionRepository.findById(id)*/ null;
     }
 
     @Override
     public Transaction getTransactionByTime(Date time) {
-        return transactionRepository.findByTime(time);
+        return /*transactionRepository.findByTime(time)*/ null;
     }
 
     @Override
@@ -76,4 +45,4 @@ public class TransactionServiceImpl implements TransactionService {
     public List<Transaction> getAllTransactions() {
         return transactionRepository.findAll();
     }
- */
+}
