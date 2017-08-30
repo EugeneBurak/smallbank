@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.PropertySource;
 
 @SpringBootApplication(scanBasePackages = "com.javadev.smallbank.controller")
-@PropertySource("classpath:app.properties")
+@PropertySource("classpath:application.properties")
 public class Application {
 
     public static void main(String[] args) {
