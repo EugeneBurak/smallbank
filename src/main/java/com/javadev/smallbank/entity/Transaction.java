@@ -16,6 +16,13 @@ public class Transaction {
     @Column(name = "transaction_id", length = 6, nullable = false)
     private int id;
 
+    /*
+  @Id
+  @GeneratedValue(strategy = GenerationType.AUTO)
+  @Column(name = "id")
+  private Long id;
+     */
+
     @Column(name = "time")
 //    @GeneratedValue(generator = "time")
     private Date time;

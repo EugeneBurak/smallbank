@@ -10,7 +10,7 @@ import org.springframework.context.annotation.ComponentScan;
 import java.util.Arrays;
 
 @SpringBootApplication
-@ComponentScan(basePackages = "com.javadev.smallbank.controller")
+@ComponentScan(basePackages = "com.javadev.smallbank.controller, com.javadev.smallbank.configuration")
 public class Application {
 
     public static void main(String[] args) {
