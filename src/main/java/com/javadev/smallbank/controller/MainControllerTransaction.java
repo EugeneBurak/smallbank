@@ -20,13 +20,19 @@ public class MainControllerTransaction {
 
     @GetMapping(path="/add") // Map ONLY GET Requests
     public @ResponseBody
-    String addNewTransaction (@RequestParam Date time
-            , @RequestParam Double amount) {
+    String addNewTransaction (@RequestParam Date time,
+                              @RequestParam Integer clientId,
+                              @RequestParam Integer fromAccountId,
+                              @RequestParam Integer toAccountId,
+                              @RequestParam Double amount) {
         // @ResponseBody means the returned String is the response, not a view name
         // @RequestParam means it is a parameter from the GET or POST request
 
         Transaction transaction = new Transaction();
-        transaction.setTime(new java.util.Date());
+        transaction.setTime(time);
+        transaction.setClientId(clientId);
+        transaction.setFromAccountId(fromAccountId);
+        transaction.setToAccountId(toAccountId);
         transaction.setAmount(amount);
         transactionRepository.save(transaction);
         return "Saved";

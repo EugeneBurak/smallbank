@@ -18,15 +18,12 @@ public class MainControllerBankAccount {
 
     @GetMapping(path="/add") // Map ONLY GET Requests
     public @ResponseBody
-    String addNewBankAccount (@RequestParam Integer clientId
-            , @RequestParam Double amount) {
+    String addNewBankAccount (@RequestParam Integer clientId,
+                              @RequestParam Double amount) {
         // @ResponseBody means the returned String is the response, not a view name
         // @RequestParam means it is a parameter from the GET or POST request
 
         BankAccount bankAccount = new BankAccount();
-
-
-
         bankAccount.setClientId(clientId);
         bankAccount.setAmount(amount);
         bankAccountRepository.save(bankAccount);

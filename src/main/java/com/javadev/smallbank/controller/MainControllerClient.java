@@ -20,7 +20,8 @@ public class MainControllerClient {
     public @ResponseBody
     String addNewClient (@RequestParam String firstName,
                          @RequestParam String lastName,
-                         @RequestParam String address) {
+                         @RequestParam String address,
+                         @RequestParam int age) {
         // @ResponseBody means the returned String is the response, not a view name
         // @RequestParam means it is a parameter from the GET or POST request
 
@@ -28,6 +29,7 @@ public class MainControllerClient {
         client.setFirstName(firstName);
         client.setLastName(lastName);
         client.setAddress(address);
+        client.setAge(age);
         clientRepository.save(client);
         return "Saved";
     }
