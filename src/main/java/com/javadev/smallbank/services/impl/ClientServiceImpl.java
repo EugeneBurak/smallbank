@@ -6,6 +6,7 @@ import com.javadev.smallbank.services.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -27,7 +28,7 @@ public class ClientServiceImpl implements ClientService {
 
     @Override
     public Client getClientById(int id) {
-        return /*clientRepository.findById(id)*/ null;
+        return clientRepository.findOne(id);
     }
 
     @Override
@@ -37,6 +38,10 @@ public class ClientServiceImpl implements ClientService {
 
     @Override
     public List<Client> getAllClients() {
-        return /*clientRepository.findAll()*/ null;
+        List<Client> list = new ArrayList<>();
+        for (Client client : clientRepository.findAll()) {
+            list.add(client);
+        }
+        return list;
     }
 }

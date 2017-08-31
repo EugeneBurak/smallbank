@@ -6,6 +6,7 @@ import com.javadev.smallbank.services.TransactionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -33,7 +34,7 @@ public class TransactionServiceImpl implements TransactionService {
 
     @Override
     public Transaction getTransactionByTime(Date time) {
-        return /*transactionRepository. */ null;
+        return null;
     }
 
     @Override
@@ -43,7 +44,11 @@ public class TransactionServiceImpl implements TransactionService {
 
     @Override
     public List<Transaction> getAllTransactions() {
-        return /*transactionRepository. */ null;
+        List<Transaction> list = new ArrayList<>();
+        for (Transaction transaction : transactionRepository.findAll()) {
+            list.add(transaction);
+        }
+        return list;
     }
 
 }

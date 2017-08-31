@@ -6,6 +6,7 @@ import com.javadev.smallbank.services.BankAccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -27,7 +28,7 @@ public class BankAccountServiceImpl implements BankAccountService{
 
     @Override
     public BankAccount getBankAccountById(int id) {
-        return /*bankAccountRepository.findById(id)*/ null;
+        return bankAccountRepository.findOne(id);
     }
 
     @Override
@@ -37,6 +38,10 @@ public class BankAccountServiceImpl implements BankAccountService{
 
     @Override
     public List<BankAccount> getAllBankAccounts() {
-        return /*bankAccountRepository.findAll()*/ null;
+        List<BankAccount> list = new ArrayList<>();
+        for (BankAccount bankAccount : bankAccountRepository.findAll()) {
+            list.add(bankAccount);
+        }
+        return list;
     }
 }
