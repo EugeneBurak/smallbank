@@ -9,10 +9,10 @@
     <a href="index.html"> Go to "Clients" </a><br>
     <a href="transaction.html"> Go to "Transactions" </a>
     <h1><p> Manager of bank accounts: </p></h1></h1>
-<form>
-    <p>Client Id:<input type="text" placeholder="clientId"></p>
-    <p>Amount:<input type="text" placeholder="amount"></p>
-    <button>SAVE</button>
+<form id="bankaccaunts" action="ba/add" method="GET">
+    <p>Client Id:<input type="text" placeholder="clientId" name="clientId"></p>
+    <p>Amount:<input type="text" placeholder="amount" name="amount"></p>
+    <button type="submit">SAVE</button>
 </form>
 <h1><p>BankAccounts:</p></h1>
 <table>

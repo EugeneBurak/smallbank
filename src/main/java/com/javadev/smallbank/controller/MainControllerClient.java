@@ -4,7 +4,10 @@ import com.javadev.smallbank.entity.Client;
 import com.javadev.smallbank.repository.ClientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller    // This means that this class is a Controller
 @RequestMapping(path="/cl") // This means URL's start with /cl (after Application path)
@@ -36,6 +39,5 @@ public class MainControllerClient {
         // This returns a JSON or XML with the users
         return clientRepository.findAll();
     }
-
 }
 

@@ -9,14 +9,14 @@
 <a href="bankaccaunt.html"> Go to "Bank accounts" </a><br>
 <a href="transaction.html"> Go to "Transactions" </a>
 <h1><p> Manager of clients: </p></h1></h1>
-<form>
-    <p>First name:<input type="text" placeholder="firstName"></p>
-    <p>Last name:<input type="text" placeholder="lastName"></p>
-    <p>Address_:<input type="text" placeholder="address"></p>
-    <p>Client age:<input type="text" placeholder="age"></p>
-    <button>SAVE</button>
+<form id="clients" action="cl/add" method="GET">
+    <p>First name:<input type="text" placeholder="firstName" name="firstName"></p>
+    <p>Last name:<input type="text" placeholder="lastName" name="lastName"></p>
+    <p>Address_:<input type="text" placeholder="address" name="address"></p>
+    <p>Client age:<input type="text" placeholder="age" name="age"></p>
+    <button type="submit">SAVE</button>
 </form>
-<h1><p>Clients:</p></h1>
+    <h1><p>Clients:</p></h1>
 <table>
     <thead>
         <td>Client Id:</td>
