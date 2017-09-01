@@ -1,12 +1,12 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Second Page</title>
+    <title>BankAccounts</title>
 </head>
 <body>
-Введенное имя: ${userJSP.name};
-<br/>
-Введенный пароль: ${userJSP.password};
-<br/>
+
+<%@ include file="/bankaccount.html" %>
+
 </body>
+
 </html>
