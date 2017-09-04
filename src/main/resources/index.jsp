@@ -4,12 +4,17 @@
 <html>
 
 <head>
-  <title>Clients</title>
+  <title>Index Page</title>
 </head>
 
 <body>
+<spring:form method="post"  modelAttribute="userJSP" action="check-user">
 
-<%@ include file="/index.html" %>
+  Name: <spring:input path="name"/> (path="" - указывает путь, используемый в modelAttribute=''. в нашем случае User.name)  <br/>
+  Password: <spring:input path="password"/>   <br/>
+  <spring:button>Next Page</spring:button>
+
+</spring:form>
 
 </body>
 
