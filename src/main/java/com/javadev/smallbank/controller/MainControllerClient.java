@@ -9,6 +9,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+
 @Controller    // This means that this class is a Controller
 @RequestMapping(path="/cl") // This means URL's start with /cl (after Application path)
 public class MainControllerClient {
@@ -18,10 +21,11 @@ public class MainControllerClient {
 
     @GetMapping(path="/add") // Map ONLY GET Requests
     public @ResponseBody
-    String addNewClient (@RequestParam String firstName,
-                         @RequestParam String lastName,
-                         @RequestParam String address,
-                         @RequestParam int age) {
+    void addNewClient (@RequestParam String firstName,
+                       @RequestParam String lastName,
+                       @RequestParam String address,
+                       @RequestParam int age,
+                       HttpServletResponse httpServletResponse) throws IOException {
         // @ResponseBody means the returned String is the response, not a view name
         // @RequestParam means it is a parameter from the GET or POST request
 
@@ -31,7 +35,8 @@ public class MainControllerClient {
         client.setAddress(address);
         client.setAge(age);
         clientRepository.save(client);
-        return "Saved";
+        httpServletResponse.sendRedirect("../index.html");
+//        return "Saved";
     }
 
     @GetMapping(path="/all")

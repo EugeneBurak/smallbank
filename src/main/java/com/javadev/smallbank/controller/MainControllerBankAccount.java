@@ -9,6 +9,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+
 @Controller    // This means that this class is a Controller
 @RequestMapping(path="/ba") // This means URL's start with /ba (after Application path)
 
@@ -19,8 +22,9 @@ public class MainControllerBankAccount {
 
     @GetMapping(path="/add") // Map ONLY GET Requests
     public @ResponseBody
-    String addNewBankAccount (@RequestParam Integer clientId,
-                              @RequestParam Double amount) {
+    void addNewBankAccount (@RequestParam Integer clientId,
+                            @RequestParam Double amount,
+                            HttpServletResponse httpServletResponse) throws IOException {
         // @ResponseBody means the returned String is the response, not a view name
         // @RequestParam means it is a parameter from the GET or POST request
 
@@ -28,7 +32,7 @@ public class MainControllerBankAccount {
         bankAccount.setClientId(clientId);
         bankAccount.setAmount(amount);
         bankAccountRepository.save(bankAccount);
-        return "Saved";
+        httpServletResponse.sendRedirect("../bankaccaunt.html");
     }
 
     @GetMapping(path="/all")

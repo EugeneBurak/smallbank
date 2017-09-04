@@ -9,7 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import java.util.Date;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 
 @Controller    // This means that this class is a Controller
 @RequestMapping(path="/tr") // This means URL's start with /tr (after Application path)
@@ -20,22 +21,24 @@ public class MainControllerTransaction {
 
     @GetMapping(path="/add") // Map ONLY GET Requests
     public @ResponseBody
-    String addNewTransaction (@RequestParam Date time,
-                              @RequestParam Integer clientId,
-                              @RequestParam Integer fromAccountId,
-                              @RequestParam Integer toAccountId,
-                              @RequestParam Double amount) {
+    void addNewTransaction (/*@RequestParam Date time,*/
+                            @RequestParam Integer clientId,
+                            @RequestParam Integer fromAccountId,
+                            @RequestParam Integer toAccountId,
+                            @RequestParam Double amount,
+                            HttpServletResponse httpServletResponse) throws IOException {
         // @ResponseBody means the returned String is the response, not a view name
         // @RequestParam means it is a parameter from the GET or POST request
 
         Transaction transaction = new Transaction();
-        transaction.setTime(time);
+        /*transaction.setTime(time);*/
         transaction.setClientId(clientId);
         transaction.setFromAccountId(fromAccountId);
         transaction.setToAccountId(toAccountId);
         transaction.setAmount(amount);
         transactionRepository.save(transaction);
-        return "Saved";
+        httpServletResponse.sendRedirect("../transaction.html");
+//        return "Saved";
     }
 
     @GetMapping(path="/all")
@@ -43,6 +46,4 @@ public class MainControllerTransaction {
         // This returns a JSON or XML with the users
         return transactionRepository.findAll();
     }
-
-
 }
