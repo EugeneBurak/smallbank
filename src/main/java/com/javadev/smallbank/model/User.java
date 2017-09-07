@@ -1,4 +1,4 @@
-package com.javadev.smallbank.controller;
+package com.javadev.smallbank.model;
 
 import org.springframework.stereotype.Component;
 
