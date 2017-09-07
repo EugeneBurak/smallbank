@@ -1,7 +1,7 @@
 package com.javadev.smallbank.controller;
 
 
-import com.javadev.smallbank.entity.Client;
+import com.javadev.smallbank.model.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -30,7 +30,7 @@ public class MainController {
     @RequestMapping(value = "/main", method = RequestMethod.GET)
     public ModelAndView main() {
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.addObject("userJSP", new Client());
+        modelAndView.addObject("userJSP", new User());
         modelAndView.setViewName("welcome");
         return modelAndView;
     }
